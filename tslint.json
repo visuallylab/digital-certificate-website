@@ -1,0 +1,3 @@
+{
+  "extends": "@visuallylab/tslint-config-frontend"
+}
