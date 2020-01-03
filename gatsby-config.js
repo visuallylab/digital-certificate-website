@@ -5,6 +5,14 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `docs`,
+        path: `${__dirname}/src/docs/`,
+      },
+    },
+    `gatsby-plugin-mdx`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
     {
