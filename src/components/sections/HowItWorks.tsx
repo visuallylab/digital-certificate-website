@@ -3,7 +3,7 @@ import React from 'react';
 import Section from '@/components/Section';
 import { IndexPageSectionId, indexPage } from '@/constant';
 import product from '@/constant/product.json';
-import Paragraphs from '../Paragraphs';
+import ParagraphGroup from '../ParagraphGroup';
 
 const HowItWorks: React.FC = () => (
   <Section
@@ -12,7 +12,7 @@ const HowItWorks: React.FC = () => (
       id: IndexPageSectionId.HowItWork,
     }}
   >
-    <Paragraphs data={indexPage.howItWorks} />
+    <ParagraphGroup data={indexPage.howItWorks} />
   </Section>
 );
 

@@ -12,7 +12,7 @@ const StyledRow = styled(Row)`
   `}
 `;
 
-const Paragraphs: React.FC<{ data: IParagraph[] }> = ({ data }) => (
+const ParagraphGroup: React.FC<{ data: IParagraph[] }> = ({ data }) => (
   <StyledRow>
     {data.map(p => (
       <Paragraph
@@ -26,4 +26,4 @@ const Paragraphs: React.FC<{ data: IParagraph[] }> = ({ data }) => (
   </StyledRow>
 );
 
-export default Paragraphs;
+export default ParagraphGroup;

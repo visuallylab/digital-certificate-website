@@ -2,7 +2,7 @@ import React from 'react';
 
 import Section from '@/components/Section';
 import { IndexPageSectionId, indexPage } from '@/constant';
-import Paragraphs from '../Paragraphs';
+import ParagraphGroup from '../ParagraphGroup';
 
 const Features: React.FC = () => (
   <Section
@@ -12,7 +12,7 @@ const Features: React.FC = () => (
       color: '#333',
     }}
   >
-    <Paragraphs data={indexPage.features} />
+    <ParagraphGroup data={indexPage.features} />
   </Section>
 );
 
