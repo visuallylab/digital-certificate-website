@@ -1,7 +1,6 @@
 import React from 'react';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 import { colors, media } from '@/styles';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { FaLink, FaFacebookF, FaTwitter, FaMediumM } from 'react-icons/fa';
 import company from '@/constant/company.json';
@@ -21,7 +20,7 @@ const StyledA = styled.a`
 `;
 
 const MediaLink: React.FC<MediaProps> = ({ uri, children }) =>
-  uri ? <StyledA to={uri}>{children}</StyledA> : null;
+  uri ? <StyledA href={uri}>{children}</StyledA> : null;
 
 const MediaLinkWrapper = styled(Row)`
   display: flex;
