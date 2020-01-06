@@ -1,3 +1,6 @@
 {
-  "extends": "@visuallylab/tslint-config-frontend"
+  "extends": "@visuallylab/tslint-config-frontend",
+  "jsRules": {
+    "object-literal-sort-keys": false
+  }
 }

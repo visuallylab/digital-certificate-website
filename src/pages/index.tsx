@@ -1,21 +1,42 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { graphql } from 'gatsby';
 
-import Layout from '../components/layout';
-import Image from '../components/image';
-import SEO from '../components/seo';
+import Layout from '@/components/Layout';
+import Head from '../components/Head';
+import Nav from '@/components/Nav';
+import Footer from '@/components/Footer';
+import Intro from '@/components/sections/Intro';
+import Features from '@/components/sections/Features';
+import Scenarios from '@/components/sections/Scenarios';
+import HowItWorks from '@/components/sections/HowItWorks';
+import Download from '@/components/sections/Download';
 
-const IndexPage = () => (
+const IndexPage: React.FC<{ data: IndexQuery }> = ({ data: { allMdx } }) => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <Head title="Home" />
+    <Nav />
+    <Intro />
+    <Features />
+    <Scenarios />
+    <HowItWorks />
+    <Download />
+    <Footer />
   </Layout>
 );
+
+export const query = graphql`
+  query Index {
+    allMdx {
+      nodes {
+        frontmatter {
+          title
+        }
+        fields {
+          slug
+        }
+      }
+    }
+  }
+`;
 
 export default IndexPage;

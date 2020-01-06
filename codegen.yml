@@ -3,7 +3,10 @@ documents:
   - ./src/**/*.{ts,tsx}
   - ./node_modules/gatsby-*/**/*.js
 generates:
-  ./src/graphqlTypes.ts:
+  ./src/typings/graphqlTypes.d.ts:
     plugins:
       - typescript
       - typescript-operations
+    config:
+      flattenGeneratedTypes: true
+      noExport: true
