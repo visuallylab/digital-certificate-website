@@ -20,7 +20,6 @@ const IndexPage: React.FC<{ data: IndexQuery }> = ({ data: { allMdx } }) => (
     <Scenarios />
     <HowItWorks />
     <Download />
-    <Footer />
   </Layout>
 );
 

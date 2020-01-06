@@ -19,7 +19,7 @@ export const colors = {
   primary: '#333',
 };
 
-export const HEADER_HEIGHT = '48px';
+export const HEADER_HEIGHT = '60px';
 
 export const breakpoints = {
   xs: '0',

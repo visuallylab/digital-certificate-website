@@ -37,6 +37,8 @@ const Logo = styled.img`
 
 const Container = styled(Grid)`
   padding: 32px 20px 14px;
+  width: 100%;
+  box-sizing: border-box;
 `;
 
 const CopyRight = styled.p`
