@@ -10,7 +10,7 @@ type MediaProps = {
   uri?: string | null;
 };
 
-const StyledA = styled(Link)`
+const StyledA = styled.a`
   margin-right: 16px;
   opacity: 0.6;
   transition: 0.2s;

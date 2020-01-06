@@ -28,7 +28,14 @@ const NavTitle = styled.span`
   color: rgb(28, 42, 77);
 `;
 
-const A = styled(Link)`
+const InternalLink = styled(Link)`
+  margin-left: 34px;
+  color: #000;
+  font-size: 20px;
+  text-decoration: none;
+`;
+
+const ExternalLink = styled.a`
   margin-left: 34px;
   color: #000;
   font-size: 20px;
@@ -76,11 +83,13 @@ export default () => {
             </Link>
           </CenteredCol>
           <AlignEndCol xs={false} sm={false} md>
-            <A to={documentUrl}>文件</A>
-            <A to="https://www.visuallylab.com">關於我們</A>
-            <A to="#">支援</A>
-            <A to="#">註冊</A>
-            <A to="#">登入</A>
+            <InternalLink to={documentUrl}>文件</InternalLink>
+            <ExternalLink href="https://www.visuallylab.com">
+              關於我們
+            </ExternalLink>
+            <InternalLink to="#">支援</InternalLink>
+            <InternalLink to="#">註冊</InternalLink>
+            <InternalLink to="#">登入</InternalLink>
           </AlignEndCol>
         </Row>
       </StyledNav>
