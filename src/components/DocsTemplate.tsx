@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from './Layout';
 import Head from './Head';
@@ -16,13 +16,13 @@ const Sidebar = styled(Col)`
   padding: 24px 12px;
 `;
 
-const A = styled.a`
+const A = styled(Link)`
   display: block;
   font-size: 16px;
   margin-bottom: 12px;
 `;
 
-const PaginationButton = styled.a`
+const PaginationButton = styled(Link)`
   text-decoration: none;
   color: black;
   font-size: 16px;
@@ -85,7 +85,7 @@ const PageTemplate: React.FC<{ data: DocQuery }> = ({
             <input placeholder="搜尋任何文字..." />
             <h3>文件列表</h3>
             {indexData.map(index => (
-              <A key={index.slug} href={index.slug}>
+              <A key={index.slug} to={index.slug}>
                 {index.title}
               </A>
             ))}
@@ -93,12 +93,12 @@ const PageTemplate: React.FC<{ data: DocQuery }> = ({
           <Content xs={12} sm={10}>
             {mdx?.body && <MDXRenderer>{mdx?.body}</MDXRenderer>}
             {previousNode && (
-              <PaginationButton href={previousNode.fields!.slug!}>
+              <PaginationButton to={previousNode.fields!.slug!}>
                 上一章：{previousNode.frontmatter!.title!}
               </PaginationButton>
             )}
             {nextNode && (
-              <PaginationButton href={nextNode.fields!.slug!}>
+              <PaginationButton to={nextNode.fields!.slug!}>
                 下一章：{nextNode.frontmatter!.title!}
               </PaginationButton>
             )}

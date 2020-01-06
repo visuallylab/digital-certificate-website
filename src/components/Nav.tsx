@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 import product from '@/constant/product.json';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery, Link } from 'gatsby';
 
 const StyledNav = styled(Grid)`
   z-index: 2;
@@ -28,7 +28,7 @@ const NavTitle = styled.span`
   color: rgb(28, 42, 77);
 `;
 
-const A = styled.a`
+const A = styled(Link)`
   margin-left: 34px;
   color: #000;
   font-size: 20px;
@@ -70,17 +70,17 @@ export default () => {
       <StyledNav fluid>
         <Row between="xs" style={{ width: '100%' }}>
           <CenteredCol>
-            <a href="/">
+            <Link to="/">
               <StyledImage src={product.logoImage} alt="logo" />
               <NavTitle>{product.name}</NavTitle>
-            </a>
+            </Link>
           </CenteredCol>
           <AlignEndCol xs={false} sm={false} md>
-            <A href={documentUrl}>文件</A>
-            <A href="https://www.visuallylab.com">關於我們</A>
-            <A href="#">支援</A>
-            <A href="#">註冊</A>
-            <A href="#">登入</A>
+            <A to={documentUrl}>文件</A>
+            <A to="https://www.visuallylab.com">關於我們</A>
+            <A to="#">支援</A>
+            <A to="#">註冊</A>
+            <A to="#">登入</A>
           </AlignEndCol>
         </Row>
       </StyledNav>

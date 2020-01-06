@@ -1,4 +1,6 @@
 module.exports = {
+  // github repo name
+  pathPrefix: '/digital-certificate-website',
   siteMetadata: {
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     title: `Gatsby Default Starter`,
