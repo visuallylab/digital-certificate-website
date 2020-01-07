@@ -1,8 +1,7 @@
 {
-  "name": "the awesome company",
-  "logoImage": "https://unsplash.it/300/100?random&gravity=center",
-  "facebookUrl": "https://www.google.com",
-  "websiteUrl": "https://www.google.com",
-  "twitterUrl": "https://www.google.com",
-  "mediumUrl": "https://www.google.com"
+  "name": "Visuallylab",
+  "logoImage": "/company-logo.svg",
+  "facebookUrl": "https://www.facebook.com/visuallylab/",
+  "websiteUrl": "https://www.visuallylab.com",
+  "mediumUrl": "https://medium.com/visuallylab"
 }

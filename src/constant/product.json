@@ -1,7 +1,5 @@
 {
-  "slogan": "our ultimate solution",
-  "name": "the awesome app",
-  "logoImage": "https://unsplash.it/100/100?random&gravity=center",
-  "appStoreDownloadLink": "https://www.google.com",
-  "googlePlayStoreDownloadLink": "https://www.google.com"
+  "slogan": "任何地點、任何時候，輕鬆查證資歷",
+  "name": "數位證書",
+  "logoImage": "/product-logo.svg"
 }

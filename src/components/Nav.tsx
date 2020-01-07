@@ -25,22 +25,25 @@ const StyledImage = styled.img`
 
 const NavTitle = styled.span`
   display: inline-block;
-  font-size: 24px;
+  font-size: 16px;
+  font-weight: 400;
   margin-left: 10px;
-  color: rgb(28, 42, 77);
+  color: #333;
 `;
 
 const InternalLink = styled(Link)`
   margin: 0 16px;
-  color: #000;
-  font-size: 20px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
   text-decoration: none;
 `;
 
 const ExternalLink = styled.a`
   margin: 0 16px;
-  color: #000;
-  font-size: 20px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
   text-decoration: none;
 `;
 
@@ -72,6 +75,12 @@ const MobileMenu = styled.div`
   `}
 `;
 
+const StyledLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+`;
+
 const query = graphql`
   query Nav {
     allMdx(sort: { order: ASC, fields: frontmatter___index }) {
@@ -100,12 +109,12 @@ export default () => {
           toggleMenu={() => setMenuActive(prev => !prev)}
           isActive={isMenuActive}
         />
-        <Row between="xs" style={{ width: '100%' }}>
+        <Row between="xs" style={{ width: '100%' }} middle="xs">
           <CenteredCol>
-            <Link to="/">
+            <StyledLink to="/">
               <StyledImage src={product.logoImage} alt="logo" />
               <NavTitle>{product.name}</NavTitle>
-            </Link>
+            </StyledLink>
           </CenteredCol>
           <AlignEndCol xs={false} sm={false} md>
             <InternalLink to={documentUrl}>文件</InternalLink>

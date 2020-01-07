@@ -28,6 +28,7 @@ const Logo = styled.img`
 
 const Name = styled.h1`
   font-size: 50px;
+  color: #555;
   ${media.lessThan('md')`
     font-size: 40px;
   `}
