@@ -3,7 +3,8 @@ import { Row } from 'react-styled-flexboxgrid';
 
 import Section from '@/components/Section';
 import Scenario from '@/components/Scenario';
-import { IndexPageSectionId, indexPage } from '@/constant';
+import { IndexPageSectionId } from '@/constant';
+import indexPage from '@/constant/indexPage.json';
 
 const Scenarios: React.FC = () => (
   <Section

@@ -1,3 +1,5 @@
+// The project do not use apollo,
+// This config only for VScode apollo extension usage.
 module.exports = {
   client: {
     service: {

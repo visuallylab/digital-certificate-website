@@ -1,8 +1,9 @@
 import React from 'react';
 
 import Section from '@/components/Section';
-import { IndexPageSectionId, indexPage } from '@/constant';
+import { IndexPageSectionId } from '@/constant';
 import ParagraphGroup from '../ParagraphGroup';
+import indexPage from '@/constant/indexPage.json';
 
 const Features: React.FC = () => (
   <Section

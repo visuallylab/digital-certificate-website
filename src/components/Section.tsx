@@ -3,46 +3,46 @@ import styled from 'styled-components';
 import { Grid } from 'react-styled-flexboxgrid';
 import Title from '@/components/SectionTitle';
 import { media } from '@/styles';
-interface ISectionProps {
+type SectionProps = {
   textAlign?: 'center' | 'left' | 'right';
   alignItems?: 'center' | 'flex-start' | 'flex-end';
   fullscreen?: boolean;
   first?: boolean;
   background?: string;
-}
+};
 
-interface ITitle {
+type Title = {
   content: string;
   id: string;
   color?: string;
-}
+};
 
-interface IProps {
+type Props = {
   textAlign?: 'center' | 'left' | 'right';
   alignItems?: 'center' | 'flex-start' | 'flex-end';
   fullscreen?: boolean;
   first?: boolean;
-  title?: ITitle;
+  title?: Title;
   desc?: string[];
   background?: string;
-}
+};
 
-const StyledSection = styled(Grid)<ISectionProps>`
+const StyledSection = styled(Grid)<SectionProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 20px 20px 120px 20px;
-  align-items: ${(props: ISectionProps) => props.alignItems};
-  text-align: ${(props: ISectionProps) => props.textAlign};
-  height: ${(props: ISectionProps) => (props.fullscreen ? '90vh' : 'initial')};
-  background: ${(props: ISectionProps) => props.background || 'transparent'};
+  align-items: ${(props: SectionProps) => props.alignItems};
+  text-align: ${(props: SectionProps) => props.textAlign};
+  height: ${(props: SectionProps) => (props.fullscreen ? '90vh' : 'initial')};
+  background: ${(props: SectionProps) => props.background || 'transparent'};
 
   ${media.lessThan('md')`
    padding: 12px 12px 32px 12px;
   `}
 `;
 
-const Section: React.FunctionComponent<IProps> = ({
+const Section: React.FC<Props> = ({
   children,
   fullscreen = false,
   textAlign = 'left',

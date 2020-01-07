@@ -2,7 +2,8 @@ import React from 'react';
 import { Row, Col } from 'react-styled-flexboxgrid';
 
 import Section from '@/components/Section';
-import { IndexPageSectionId, indexPage } from '@/constant';
+import { IndexPageSectionId } from '@/constant';
+import indexPage from '@/constant/indexPage.json';
 
 const Download: React.FC = () => (
   <Section
