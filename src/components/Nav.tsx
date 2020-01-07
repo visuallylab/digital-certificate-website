@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 import product from '@/constant/product.json';
 import { graphql, useStaticQuery, Link } from 'gatsby';
+import MenuButton from './MenuButton';
+import { media } from '@/styles';
 
 const StyledNav = styled(Grid)`
   z-index: 2;
@@ -18,7 +20,7 @@ const StyledNav = styled(Grid)`
 `;
 
 const StyledImage = styled.img`
-  width: 27px;
+  width: 48px;
 `;
 
 const NavTitle = styled.span`
@@ -29,14 +31,14 @@ const NavTitle = styled.span`
 `;
 
 const InternalLink = styled(Link)`
-  margin-left: 34px;
+  margin: 0 16px;
   color: #000;
   font-size: 20px;
   text-decoration: none;
 `;
 
 const ExternalLink = styled.a`
-  margin-left: 34px;
+  margin: 0 16px;
   color: #000;
   font-size: 20px;
   text-decoration: none;
@@ -52,6 +54,24 @@ const AlignEndCol = styled(Col)`
   text-align: end;
 `;
 
+const MobileMenu = styled.div`
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  height: 360px;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+
+  ${media.lessThan('md')`
+    display: flex;
+  `}
+`;
+
 const query = graphql`
   query Nav {
     allMdx(sort: { order: ASC, fields: frontmatter___index }) {
@@ -65,6 +85,7 @@ const query = graphql`
 `;
 
 export default () => {
+  const [isMenuActive, setMenuActive] = useState(false);
   const {
     allMdx: { nodes },
   }: NavQuery = useStaticQuery(query);
@@ -75,6 +96,10 @@ export default () => {
   return (
     <>
       <StyledNav fluid>
+        <MenuButton
+          toggleMenu={() => setMenuActive(prev => !prev)}
+          isActive={isMenuActive}
+        />
         <Row between="xs" style={{ width: '100%' }}>
           <CenteredCol>
             <Link to="/">
@@ -92,6 +117,17 @@ export default () => {
             <InternalLink to="#">登入</InternalLink>
           </AlignEndCol>
         </Row>
+        {isMenuActive && (
+          <MobileMenu>
+            <InternalLink to={documentUrl}>文件</InternalLink>
+            <ExternalLink href="https://www.visuallylab.com">
+              關於我們
+            </ExternalLink>
+            <InternalLink to="#">支援</InternalLink>
+            <InternalLink to="#">註冊</InternalLink>
+            <InternalLink to="#">登入</InternalLink>
+          </MobileMenu>
+        )}
       </StyledNav>
     </>
   );
