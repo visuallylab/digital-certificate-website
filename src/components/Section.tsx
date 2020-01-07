@@ -36,6 +36,7 @@ const StyledSection = styled(Grid)<SectionProps>`
   text-align: ${(props: SectionProps) => props.textAlign};
   height: ${(props: SectionProps) => (props.fullscreen ? '90vh' : 'initial')};
   background: ${(props: SectionProps) => props.background || 'transparent'};
+  min-height: 50vh;
 
   ${media.lessThan('md')`
    padding: 12px 12px 32px 12px;

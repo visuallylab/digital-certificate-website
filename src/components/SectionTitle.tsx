@@ -14,7 +14,7 @@ const Title = styled.h1<{
   margin-bottom: 40px;
 
   ${media.lessThan('md')`
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 300;
   `}
 `;

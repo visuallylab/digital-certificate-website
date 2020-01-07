@@ -1,89 +1,51 @@
 import React from 'react';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
-import { colors, media } from '@/styles';
+import { media } from '@/styles';
 import styled from 'styled-components';
-import { FaLink, FaFacebookF, FaTwitter, FaMediumM } from 'react-icons/fa';
 import company from '@/constant/company.json';
 
-type MediaProps = {
-  uri?: string | null;
-};
-
-const StyledA = styled.a`
-  margin-right: 16px;
-  opacity: 0.6;
-  transition: 0.2s;
-
-  &:hover {
-    opacity: 1;
-  }
-`;
-
-const MediaLink: React.FC<MediaProps> = ({ uri, children }) =>
-  uri ? <StyledA href={uri}>{children}</StyledA> : null;
-
-const MediaLinkWrapper = styled(Row)`
-  display: flex;
-  justify-content: flex-end;
-  ${media.lessThan('md')`justify-content: center;`}
-`;
-
 const Logo = styled.img`
-  width: 150px;
+  width: 160px;
   ${media.lessThan('md')`
-    width: 80px;
-    margin-bottom: 20px;`}
+    width: 120px;
+    margin-bottom: 0px;`}
 `;
 
 const Container = styled(Grid)`
-  padding: 32px 20px 14px;
+  padding: 64px 20px 48px 20px;
   width: 100%;
   box-sizing: border-box;
+  border-top: 1px solid #ccc;
+
+  ${media.lessThan('md')`
+     padding: 40px 16px 30px 12px;
+    `}
 `;
 
 const CopyRight = styled.p`
   text-align: center;
   opacity: 0.5;
-  margin-top: 40px;
-  color: #fff;
-  font-size: 18px;
-  font-weight: lighter;
+  color: #333;
+  font-size: 14px;
+  font-weight: 300;
   ${media.lessThan('md')` 
-  margin-top: 32px;
-  font-size: 16px;`}
+  font-size: 12px;`}
+`;
+
+const LogoRow = styled(Row)`
+  margin-bottom: 20px;
+  ${media.lessThan('md')` 
+  margin-bottom: 0px;`}
 `;
 
 const Footer: React.FC = () => {
   return (
-    <Container
-      fluid
-      style={{
-        backgroundColor: colors.primary,
-      }}
-    >
-      <Row center="xs" style={{ marginBottom: '12px' }}>
+    <Container fluid>
+      <LogoRow center="xs">
         <Col>
-          <Logo style={{ marginRight: '12px' }} src={company.logoImage} />
+          <Logo src={company.logoImage} />
         </Col>
-      </Row>
-      <Row center="xs">
-        <Col>
-          <MediaLinkWrapper>
-            <MediaLink uri={company.websiteUrl}>
-              <FaLink color="#fff" />
-            </MediaLink>
-            <MediaLink uri={company.facebookUrl}>
-              <FaFacebookF color="#fff" />
-            </MediaLink>
-            <MediaLink uri={company.twitterUrl}>
-              <FaTwitter color="#fff" />
-            </MediaLink>
-            <MediaLink uri={company.mediumUrl}>
-              <FaMediumM color="#fff" />
-            </MediaLink>
-          </MediaLinkWrapper>
-        </Col>
-      </Row>
+      </LogoRow>
       <CopyRight>
         © {new Date().getFullYear()}, Built with {company.name}
       </CopyRight>

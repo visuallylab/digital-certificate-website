@@ -8,7 +8,7 @@ import indexPage from '@/constant/indexPage.json';
 const Features: React.FC = () => (
   <Section
     title={{
-      content: 'Features',
+      content: '功能特色',
       id: IndexPageSectionId.Features,
       color: '#333',
     }}

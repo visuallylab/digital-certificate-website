@@ -9,7 +9,7 @@ import indexPage from '@/constant/indexPage.json';
 const Scenarios: React.FC = () => (
   <Section
     title={{
-      content: 'Application Scenarios',
+      content: '應用場景',
       id: IndexPageSectionId.scenarios,
     }}
   >

@@ -20,21 +20,29 @@ const A = styled(Link)`
   display: block;
   font-size: 16px;
   margin-bottom: 12px;
+  text-decoration: none;
+  color: #999;
+
+  :hover {
+    color: #333;
+  }
 `;
 
 const PaginationButton = styled(Link)`
   text-decoration: none;
   color: black;
   font-size: 16px;
-  border: 1px solid grey;
   box-sizing: border-box;
-  padding: 12px;
   margin-top: 12px;
   display: inline-block;
   margin-right: 12px;
   transition: 0.2s;
-  &:hover {
-    background-color: silver;
+  border: 1px solid silver;
+  padding: 12px 32px;
+  border-radius: 4px;
+
+  :hover {
+    background-color: #eee;
   }
 `;
 

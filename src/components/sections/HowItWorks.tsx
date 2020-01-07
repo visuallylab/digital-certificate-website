@@ -9,7 +9,7 @@ import indexPage from '@/constant/indexPage.json';
 const HowItWorks: React.FC = () => (
   <Section
     title={{
-      content: `How ${product.name} works?`,
+      content: `${product.name}如何運作？`,
       id: IndexPageSectionId.HowItWork,
     }}
   >

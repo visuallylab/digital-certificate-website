@@ -15,7 +15,9 @@ export const Icon = styled.img`
 export const Description = styled.p<{ color: string }>`
   display: inline-block;
   color: ${props => props.color};
-  font-size: 18px;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+  line-height: 28px;
   max-width: 250px;
   margin: 0;
   text-align: left;
