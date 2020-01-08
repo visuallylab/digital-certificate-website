@@ -1,9 +1,13 @@
+const product = require('./src/constant/product.json');
+
 module.exports = {
   // github repo name
   pathPrefix: '/digital-certificate-website',
   siteMetadata: {
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    title: `Gatsby Default Starter`,
+    description: product.slogan,
+    title: `${product.name} | ${product.slogan}`,
+    siteUrl: 'https://visuallylab.github.io/digital-certificate-website',
+    image: '/product-logo.png',
   },
   plugins: [
     `gatsby-transformer-sharp`,
@@ -43,13 +47,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `${product.name} | ${product.slogan}`,
+        short_name: product.name,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/product-logo.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql, useStaticQuery } from 'gatsby';
+import product from '@/constant/product.json';
 
 type Props = {
   description?: string;
@@ -13,6 +14,8 @@ const query = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
+        image
         description
       }
     }
@@ -28,12 +31,15 @@ const Head: React.FC<Props> = ({ description, lang = 'zh-TW', title = '' }) => {
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`%s | ${site?.siteMetadata?.title}`}
+      title={`${title} | ${product.slogan}`}
       meta={[
         {
           name: `description`,
           content: metaDescription,
+        },
+        {
+          property: `og:image`,
+          content: `${site?.siteMetadata?.siteUrl}${site?.siteMetadata?.image}`,
         },
         {
           property: `og:title`,
