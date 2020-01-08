@@ -3,6 +3,7 @@ import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 import { media } from '@/styles';
 import styled from 'styled-components';
 import company from '@/constant/company.json';
+import companyLogo from '@/images/company-logo.svg';
 
 const Logo = styled.img`
   width: 160px;
@@ -43,7 +44,7 @@ const Footer: React.FC = () => {
     <Container fluid>
       <LogoRow center="xs">
         <Col>
-          <Logo src={company.logoImage} />
+          <Logo src={companyLogo} />
         </Col>
       </LogoRow>
       <CopyRight>

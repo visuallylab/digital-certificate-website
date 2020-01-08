@@ -12,7 +12,7 @@ import Download from '@/components/sections/Download';
 
 const IndexPage: React.FC<{ data: IndexQuery }> = () => (
   <Layout>
-    <Head title="Home" />
+    <Head title="數位證書" />
     <Nav />
     <Intro />
     <Features />

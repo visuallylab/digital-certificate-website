@@ -6,6 +6,7 @@ import product from '@/constant/product.json';
 import { graphql, useStaticQuery, Link } from 'gatsby';
 import MenuButton from './MenuButton';
 import { media } from '@/styles';
+import productLogo from '@/images/product-logo.svg';
 
 const StyledNav = styled(Grid)`
   z-index: 2;
@@ -112,7 +113,7 @@ export default () => {
         <Row between="xs" style={{ width: '100%' }} middle="xs">
           <CenteredCol>
             <StyledLink to="/">
-              <StyledImage src={product.logoImage} alt="logo" />
+              <StyledImage src={productLogo} alt="logo" />
               <NavTitle>{product.name}</NavTitle>
             </StyledLink>
           </CenteredCol>

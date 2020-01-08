@@ -8,6 +8,7 @@ const StyledRow = styled(Row)`
   width: 100%;
   padding: 40px 0 30px;
   justify-content: space-around;
+  display: flex;
   ${media.lessThan('md')`
     padding: 12px 0 20px;
   `}
