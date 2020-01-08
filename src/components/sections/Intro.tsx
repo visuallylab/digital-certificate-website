@@ -11,36 +11,51 @@ import hero from '@/images/hero.png';
 const Hero = styled.img`
   position: absolute;
   top: 240px;
-  right: 120px;
+  right: 80px;
   width: 600px;
+  ${media.lessThan('lg')`
+    width: 400px;
+  `}
   ${media.lessThan('md')`
+     width: 360px;
+  `}
+  ${media.lessThan('sm')`
+    width: 300px;
     top: 120px;
     left: 50%;
     right: 50%;
     transform: translateX(-50%);
-    width: 240px;
   `}
 `;
 
 const Content = styled(Row)`
   position: relative;
   padding-left: 120px;
+  width: 100%;
   ${media.lessThan('md')`
-    padding-left: 32px;
+    padding-left: 30px;
+  `}
+  ${media.lessThan('sm')`
+    justify-content: center;
   `}
 `;
 
 const StyledCol = styled(Col)`
   align-items: flex-start;
   text-align: left;
-  ${media.lessThan('md')`
-  padding-top: 120px;
-  text-align: center;`}
+  ${media.lessThan('sm')`
+    padding-top: 100px;
+    align-items: center;
+    text-align: center;
+  `}
 `;
 
 const Logo = styled.img`
   width: 240px;
 
+  ${media.lessThan('lg')`
+      width: 200px;
+  `}
   ${media.lessThan('md')`
     width: 180px;
   `}
@@ -49,16 +64,14 @@ const Logo = styled.img`
 const Name = styled.h1`
   font-size: 50px;
   color: #555;
-  ${media.lessThan('md')`
-    
+  ${media.lessThan('lg')`
     font-size: 40px;
   `}
 `;
 
 const Slogan = styled.p`
-  font-size: 30px;
-  ${media.lessThan('md')`
-    text-align: center;
+  font-size: 24px;
+  ${media.lessThan('lg')`
     font-size: 20px;
   `}
 `;
@@ -66,7 +79,7 @@ const Slogan = styled.p`
 const Intro: React.FC = () => (
   <Section fullscreen alignItems="flex-start">
     <Hero src={hero} />
-    <Content center="xs">
+    <Content>
       <StyledCol>
         <Logo src={productLogo} />
         <Name>{product.name}</Name>
