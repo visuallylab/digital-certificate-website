@@ -5,7 +5,7 @@
  */
 
 const { createFilePath } = require('gatsby-source-filesystem');
-const path = require('path');
+// const path = require('path');
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
@@ -49,20 +49,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query');
   }
 
-  // Create blog post pages.
-  const posts = result.data.allMdx.edges;
-
-  // Comment the doc pages because we don't need them for now
-  // posts.forEach(({ node }, index) => {
-  //   createPage({
-  //     // This is the slug you created before
-  //     // (or `node.frontmatter.slug`)
-  //     path: node.fields.slug,
-  //     // This component will wrap our MDX content
-  //     component: path.resolve(`./src/components/DocsTemplate.tsx`),
-  //     // You can use the values in this context in
-  //     // our page layout component
-  //     context: { id: node.id },
-  //   });
-  // });
+  // DOCUMENT FEATURE: Comment the doc pages because we don't need them for now
+  /* const posts = result.data.allMdx.edges;
+  posts.forEach(({ node }, index) => {
+    createPage({
+      // This is the slug you created before
+      // (or `node.frontmatter.slug`)
+      path: node.fields.slug,
+      // This component will wrap our MDX content
+      component: path.resolve(`./src/components/DocsTemplate.tsx`),
+      // You can use the values in this context in
+      // our page layout component
+      context: { id: node.id },
+    });
+   });*/
 };
