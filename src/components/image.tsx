@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import Img, { FixedObject } from 'gatsby-image';
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -13,20 +13,36 @@ import Img from 'gatsby-image';
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Image = () => {
-  const data = useStaticQuery(graphql`
-    query ImageQuery {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
+type Props = {
+  src: string;
+};
+
+const Image: React.FC<Props> = ({ src }) => {
+  const { allFile }: ImageQuery = useStaticQuery(graphql`
+    query Image {
+      allFile {
+        nodes {
+          name
+          childImageSharp {
+            fixed(width: 180) {
+              ...GatsbyImageSharpFixed
+            }
           }
         }
       }
     }
   `);
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
+  const source = allFile.nodes.find(node => node.name === src);
+
+  return source ? (
+    <Img
+      fixed={source!.childImageSharp!.fixed as FixedObject}
+      imgStyle={{
+        borderRadius: '50%',
+      }}
+    />
+  ) : null;
 };
 
 export default Image;

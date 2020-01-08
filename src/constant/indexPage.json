@@ -14,19 +14,19 @@
   "scenarios": [
     {
       "title": "學校頒發畢業證書",
-      "icon": "https://unsplash.it/600/600?random&gravity=center"
+      "icon": "graduate"
     },
     {
       "title": "學生申請國外學校",
-      "icon": "https://unsplash.it/600/600?random&gravity=center"
+      "icon": "documents"
     },
     {
       "title": "公司驗證員工經歷",
-      "icon": "https://unsplash.it/600/600?random&gravity=center"
+      "icon": "company"
     },
     {
       "title": "補習班頒發結業證明",
-      "icon": "https://unsplash.it/600/600?random&gravity=center"
+      "icon": "school"
     }
   ],
   "howItWorks": [

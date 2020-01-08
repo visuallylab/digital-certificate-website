@@ -2,6 +2,7 @@ import React from 'react';
 import { Col } from 'react-styled-flexboxgrid';
 import styled from 'styled-components';
 import { media } from '@/styles';
+import Image from './Image';
 
 const Container = styled(Col)`
   display: flex;
@@ -22,25 +23,16 @@ const Title = styled(Col)`
   `}
 `;
 
-const Img = styled.img`
-  height: 180px;
-  width: 180px;
-  margin-bottom: 62px;
-
-  ${media.lessThan('md')`
-  width: 90%;
-  margin-bottom: 20px;
-  `}
-`;
-
 const Scenario: React.FC<{
   title: string;
   icon: string;
-}> = props => (
-  <Container xs={6} sm={4} md={3} {...props}>
-    <Title>{props.title}</Title>
-    <Img src={props.icon} />
-  </Container>
-);
+}> = props => {
+  return (
+    <Container xs={6} sm={4} md={3} {...props}>
+      <Title>{props.title}</Title>
+      <Image src={props.icon} />
+    </Container>
+  );
+};
 
 export default Scenario;
