@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 import product from '@/constant/product.json';
-import { graphql, useStaticQuery, Link } from 'gatsby';
+import { Link } from 'gatsby';
 import MenuButton from './MenuButton';
 import { media } from '@/styles';
 import productLogo from '@/images/product-logo.svg';
@@ -82,27 +82,18 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 
-const query = graphql`
-  query Nav {
-    allMdx(sort: { order: ASC, fields: frontmatter___index }) {
-      nodes {
-        fields {
-          slug
-        }
-      }
-    }
-  }
-`;
+const Links = () => (
+  <>
+    <ExternalLink href="https://jhihcing.gitbook.io/dcert/">文件</ExternalLink>
+    <ExternalLink href="https://forms.gle/wrYMiE7xGpeRR8Ui6">支援</ExternalLink>
+    <InternalLink to="#">註冊</InternalLink>
+    <InternalLink to="#">登入</InternalLink>
+  </>
+);
 
 export default () => {
   const [isMenuActive, setMenuActive] = useState(false);
-  const {
-    allMdx: { nodes },
-  }: NavQuery = useStaticQuery(query);
-  const documentUrl =
-    nodes.length > 0 && nodes[0].fields && nodes[0].fields.slug
-      ? nodes[0].fields.slug
-      : '#';
+
   return (
     <>
       <StyledNav fluid>
@@ -118,24 +109,12 @@ export default () => {
             </StyledLink>
           </CenteredCol>
           <AlignEndCol xs={false} sm={false} md>
-            <InternalLink to={documentUrl}>文件</InternalLink>
-            <ExternalLink href="https://www.visuallylab.com">
-              關於我們
-            </ExternalLink>
-            <InternalLink to="#">支援</InternalLink>
-            <InternalLink to="#">註冊</InternalLink>
-            <InternalLink to="#">登入</InternalLink>
+            <Links />
           </AlignEndCol>
         </Row>
         {isMenuActive && (
           <MobileMenu>
-            <InternalLink to={documentUrl}>文件</InternalLink>
-            <ExternalLink href="https://www.visuallylab.com">
-              關於我們
-            </ExternalLink>
-            <InternalLink to="#">支援</InternalLink>
-            <InternalLink to="#">註冊</InternalLink>
-            <InternalLink to="#">登入</InternalLink>
+            <Links />
           </MobileMenu>
         )}
       </StyledNav>

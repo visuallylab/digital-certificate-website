@@ -56,7 +56,7 @@ const Container = styled(Col)`
     margin-bottom: 40px;
     display:flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
   `}
 `;
 
