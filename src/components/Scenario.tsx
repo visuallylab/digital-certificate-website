@@ -5,9 +5,25 @@ import { media } from '@/styles';
 import Image from './Image';
 
 const Container = styled(Col)`
-  display: flex;
+  display: flex !important;
   flex-direction: column;
+  align-items: center;
   text-align: center;
+  justify-content: center;
+  padding-bottom: 32px;
+  & .gatsby-image-wrapper {
+    width: 120px !important;
+    height: 120px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: hidden !important;
+    picture {
+      flex-shrink: 0 !important;
+      min-width: 100% !important;
+      min-height: 100% !important;
+    }
+  }
 `;
 
 const Title = styled(Col)`
@@ -15,10 +31,11 @@ const Title = styled(Col)`
   font-size: 24px;
   margin-top: 56px;
   margin-bottom: 30px;
+
   ${media.lessThan('md')`
-   font-size: 16px;
+   font-size: 15px;
    font-weight: 300;
-   margin-bottom: 12px;
+   margin-bottom: 18px;
    margin-top: 0px;
   `}
 `;

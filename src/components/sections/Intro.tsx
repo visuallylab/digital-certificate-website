@@ -20,11 +20,11 @@ const Hero = styled.img`
      width: 360px;
   `}
   ${media.lessThan('sm')`
+    position: relative;
     width: 300px;
-    top: 120px;
-    left: 50%;
-    right: 50%;
-    transform: translateX(-50%);
+    top: 0;
+    right: 0;
+    align-self: center;
   `}
 `;
 
@@ -44,7 +44,7 @@ const StyledCol = styled(Col)`
   align-items: flex-start;
   text-align: left;
   ${media.lessThan('sm')`
-    padding-top: 100px;
+    padding-top: 30px;
     align-items: center;
     text-align: center;
   `}

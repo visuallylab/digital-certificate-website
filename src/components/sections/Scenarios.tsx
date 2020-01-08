@@ -5,6 +5,9 @@ import Section from '@/components/Section';
 import Scenario from '@/components/Scenario';
 import { IndexPageSectionId } from '@/constant';
 import indexPage from '@/constant/indexPage.json';
+import styled from 'styled-components';
+
+const StyledRow = styled(Row)``;
 
 const Scenarios: React.FC = () => (
   <Section
@@ -13,11 +16,11 @@ const Scenarios: React.FC = () => (
       id: IndexPageSectionId.scenarios,
     }}
   >
-    <Row style={{ width: '100%' }} between="xs">
+    <StyledRow style={{ width: '100%' }} between="xs">
       {indexPage.scenarios.map(s => (
         <Scenario key={s.title} {...s} />
       ))}
-    </Row>
+    </StyledRow>
   </Section>
 );
 
