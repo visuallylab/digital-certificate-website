@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Col } from 'react-styled-flexboxgrid';
 import { media } from '@/styles';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery, withAssetPrefix } from 'gatsby';
 
 export const Icon = styled.img`
   z-index: 1;
@@ -97,12 +97,9 @@ const Paragraph: React.FC<IParagraph> = ({
   iconStyle,
   color = '#333',
 }) => {
-  const { allFile }: ParagraphImageQuery = useStaticQuery(query);
-  const imageNode = allFile.nodes.find(node => node.name === icon);
-  const imageSource = imageNode?.publicURL as undefined | string;
   return (
     <Container md={3} sm={6} xs={12}>
-      {imageSource && <Icon src={imageSource} style={iconStyle} />}
+      <Icon src={withAssetPrefix(`/${icon}.svg`)} style={iconStyle} />
       <ContentWrapper>
         <Title color={color}>{title}</Title>
         <Description color={color}>{description}</Description>
